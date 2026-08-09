@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A40B6253028FD1000E984E0 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A40B6243028FD1000E984E0 /* AuthError.swift */; };
 		1AB21D5E302421BF009226E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB21D5D302421BF009226E2 /* Assets.xcassets */; };
 		1AB21D61302421BF009226E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB21D60302421BF009226E2 /* Preview Assets.xcassets */; };
 		1AB21D6F30242211009226E2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D6730242211009226E2 /* Models.swift */; };
@@ -23,9 +24,13 @@
 		1AB21D8130242228009226E2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D7A30242228009226E2 /* Models.swift */; };
 		1AB21D8230242228009226E2 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D7B30242228009226E2 /* TaskListView.swift */; };
 		1AB21D8330242228009226E2 /* TaskFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D7C30242228009226E2 /* TaskFlowApp.swift */; };
+		1ADAD67930251D5000764667 /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADAD67830251D5000764667 /* AuthStore.swift */; };
+		1ADAD67B302523CD00764667 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADAD67A302523CD00764667 /* SignInView.swift */; };
+		1ADAD67D3025307C00764667 /* PasskeyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADAD67C3025307C00764667 /* PasskeyCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A40B6243028FD1000E984E0 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		1AB21D56302421BC009226E2 /* TaskFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB21D5D302421BF009226E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AB21D60302421BF009226E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -43,6 +48,9 @@
 		1AB21D7A30242228009226E2 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = "../../TaskFlow-base/TaskFlow/Models.swift"; sourceTree = "<group>"; };
 		1AB21D7B30242228009226E2 /* TaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListView.swift; path = "../../TaskFlow-base/TaskFlow/TaskListView.swift"; sourceTree = "<group>"; };
 		1AB21D7C30242228009226E2 /* TaskFlowApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskFlowApp.swift; path = "../../TaskFlow-base/TaskFlow/TaskFlowApp.swift"; sourceTree = "<group>"; };
+		1ADAD67830251D5000764667 /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
+		1ADAD67A302523CD00764667 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		1ADAD67C3025307C00764667 /* PasskeyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasskeyCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +88,14 @@
 				1AB21D7730242228009226E2 /* SettingsView.swift */,
 				1AB21D7630242228009226E2 /* TaskDetailView.swift */,
 				1AB21D7C30242228009226E2 /* TaskFlowApp.swift */,
+				1ADAD67C3025307C00764667 /* PasskeyCoordinator.swift */,
+				1A40B6243028FD1000E984E0 /* AuthError.swift */,
 				1AB21D7B30242228009226E2 /* TaskListView.swift */,
 				1AB21D7830242228009226E2 /* TasksStore.swift */,
 				1AB21D5D302421BF009226E2 /* Assets.xcassets */,
 				1AB21D5F302421BF009226E2 /* Preview Content */,
+				1ADAD67830251D5000764667 /* AuthStore.swift */,
+				1ADAD67A302523CD00764667 /* SignInView.swift */,
 			);
 			path = TaskFlow;
 			sourceTree = "<group>";
@@ -182,19 +194,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ADAD67D3025307C00764667 /* PasskeyCoordinator.swift in Sources */,
 				1AB21D7D30242228009226E2 /* TaskDetailView.swift in Sources */,
 				1AB21D7230242211009226E2 /* TaskDetailView.swift in Sources */,
 				1AB21D7130242211009226E2 /* SettingsView.swift in Sources */,
 				1AB21D8130242228009226E2 /* Models.swift in Sources */,
 				1AB21D7E30242228009226E2 /* SettingsView.swift in Sources */,
+				1A40B6253028FD1000E984E0 /* AuthError.swift in Sources */,
 				1AB21D7030242211009226E2 /* RootView.swift in Sources */,
 				1AB21D7530242211009226E2 /* TasksStore.swift in Sources */,
+				1ADAD67930251D5000764667 /* AuthStore.swift in Sources */,
 				1AB21D8230242228009226E2 /* TaskListView.swift in Sources */,
 				1AB21D8330242228009226E2 /* TaskFlowApp.swift in Sources */,
 				1AB21D6F30242211009226E2 /* Models.swift in Sources */,
 				1AB21D7330242211009226E2 /* TaskFlowApp.swift in Sources */,
 				1AB21D7F30242228009226E2 /* TasksStore.swift in Sources */,
 				1AB21D7430242211009226E2 /* TaskListView.swift in Sources */,
+				1ADAD67B302523CD00764667 /* SignInView.swift in Sources */,
 				1AB21D8030242228009226E2 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,9 +342,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskFlow/Preview Content\"";
+				DEVELOPMENT_TEAM = WR9LAGW6KW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -336,6 +354,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,6 +362,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xfactorconsulting.TaskFlow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -354,9 +374,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskFlow/Preview Content\"";
+				DEVELOPMENT_TEAM = WR9LAGW6KW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -364,6 +386,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,6 +394,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xfactorconsulting.TaskFlow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
