@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A40B6253028FD1000E984E0 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A40B6243028FD1000E984E0 /* AuthError.swift */; };
+		1A40B6273029345900E984E0 /* TokenVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A40B6263029345900E984E0 /* TokenVault.swift */; };
+		1A40B6293029528D00E984E0 /* BiometricGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A40B6283029528D00E984E0 /* BiometricGate.swift */; };
+		1A40B62C302A5BF800E984E0 /* TaskDetailView.swift in Resources */ = {isa = PBXBuildFile; fileRef = 1A40B62B302A5BF800E984E0 /* TaskDetailView.swift */; };
 		1AB21D5E302421BF009226E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB21D5D302421BF009226E2 /* Assets.xcassets */; };
 		1AB21D61302421BF009226E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB21D60302421BF009226E2 /* Preview Assets.xcassets */; };
 		1AB21D6F30242211009226E2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D6730242211009226E2 /* Models.swift */; };
@@ -17,7 +20,6 @@
 		1AB21D7330242211009226E2 /* TaskFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D6B30242211009226E2 /* TaskFlowApp.swift */; };
 		1AB21D7430242211009226E2 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D6C30242211009226E2 /* TaskListView.swift */; };
 		1AB21D7530242211009226E2 /* TasksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D6D30242211009226E2 /* TasksStore.swift */; };
-		1AB21D7D30242228009226E2 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D7630242228009226E2 /* TaskDetailView.swift */; };
 		1AB21D7E30242228009226E2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D7730242228009226E2 /* SettingsView.swift */; };
 		1AB21D7F30242228009226E2 /* TasksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D7830242228009226E2 /* TasksStore.swift */; };
 		1AB21D8030242228009226E2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB21D7930242228009226E2 /* RootView.swift */; };
@@ -31,6 +33,10 @@
 
 /* Begin PBXFileReference section */
 		1A40B6243028FD1000E984E0 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		1A40B6263029345900E984E0 /* TokenVault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenVault.swift; sourceTree = "<group>"; };
+		1A40B6283029528D00E984E0 /* BiometricGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricGate.swift; sourceTree = "<group>"; };
+		1A40B62A3029568000E984E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1A40B62B302A5BF800E984E0 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		1AB21D56302421BC009226E2 /* TaskFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB21D5D302421BF009226E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AB21D60302421BF009226E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -41,8 +47,7 @@
 		1AB21D6B30242211009226E2 /* TaskFlowApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskFlowApp.swift; sourceTree = "<group>"; };
 		1AB21D6C30242211009226E2 /* TaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		1AB21D6D30242211009226E2 /* TasksStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksStore.swift; sourceTree = "<group>"; };
-		1AB21D7630242228009226E2 /* TaskDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskDetailView.swift; path = "../../TaskFlow-base/TaskFlow/TaskDetailView.swift"; sourceTree = "<group>"; };
-		1AB21D7730242228009226E2 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = "../../TaskFlow-base/TaskFlow/SettingsView.swift"; sourceTree = "<group>"; };
+		1AB21D7730242228009226E2 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = "/Users/chrishewitt/Desktop/Work/e-Learning XFactor/authentication-secure-storage-ios/TaskFlow-base/TaskFlow/SettingsView.swift"; sourceTree = "<absolute>"; };
 		1AB21D7830242228009226E2 /* TasksStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TasksStore.swift; path = "../../TaskFlow-base/TaskFlow/TasksStore.swift"; sourceTree = "<group>"; };
 		1AB21D7930242228009226E2 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootView.swift; path = "../../TaskFlow-base/TaskFlow/RootView.swift"; sourceTree = "<group>"; };
 		1AB21D7A30242228009226E2 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = "../../TaskFlow-base/TaskFlow/Models.swift"; sourceTree = "<group>"; };
@@ -83,10 +88,12 @@
 		1AB21D58302421BC009226E2 /* TaskFlow */ = {
 			isa = PBXGroup;
 			children = (
+				1A40B62A3029568000E984E0 /* Info.plist */,
 				1AB21D7A30242228009226E2 /* Models.swift */,
 				1AB21D7930242228009226E2 /* RootView.swift */,
+				1A40B6283029528D00E984E0 /* BiometricGate.swift */,
 				1AB21D7730242228009226E2 /* SettingsView.swift */,
-				1AB21D7630242228009226E2 /* TaskDetailView.swift */,
+				1A40B62B302A5BF800E984E0 /* TaskDetailView.swift */,
 				1AB21D7C30242228009226E2 /* TaskFlowApp.swift */,
 				1ADAD67C3025307C00764667 /* PasskeyCoordinator.swift */,
 				1A40B6243028FD1000E984E0 /* AuthError.swift */,
@@ -95,6 +102,7 @@
 				1AB21D5D302421BF009226E2 /* Assets.xcassets */,
 				1AB21D5F302421BF009226E2 /* Preview Content */,
 				1ADAD67830251D5000764667 /* AuthStore.swift */,
+				1A40B6263029345900E984E0 /* TokenVault.swift */,
 				1ADAD67A302523CD00764667 /* SignInView.swift */,
 			);
 			path = TaskFlow;
@@ -184,6 +192,7 @@
 			files = (
 				1AB21D61302421BF009226E2 /* Preview Assets.xcassets in Resources */,
 				1AB21D5E302421BF009226E2 /* Assets.xcassets in Resources */,
+				1A40B62C302A5BF800E984E0 /* TaskDetailView.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +204,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ADAD67D3025307C00764667 /* PasskeyCoordinator.swift in Sources */,
-				1AB21D7D30242228009226E2 /* TaskDetailView.swift in Sources */,
 				1AB21D7230242211009226E2 /* TaskDetailView.swift in Sources */,
 				1AB21D7130242211009226E2 /* SettingsView.swift in Sources */,
 				1AB21D8130242228009226E2 /* Models.swift in Sources */,
@@ -203,6 +211,8 @@
 				1A40B6253028FD1000E984E0 /* AuthError.swift in Sources */,
 				1AB21D7030242211009226E2 /* RootView.swift in Sources */,
 				1AB21D7530242211009226E2 /* TasksStore.swift in Sources */,
+				1A40B6293029528D00E984E0 /* BiometricGate.swift in Sources */,
+				1A40B6273029345900E984E0 /* TokenVault.swift in Sources */,
 				1ADAD67930251D5000764667 /* AuthStore.swift in Sources */,
 				1AB21D8230242228009226E2 /* TaskListView.swift in Sources */,
 				1AB21D8330242228009226E2 /* TaskFlowApp.swift in Sources */,
@@ -349,6 +359,9 @@
 				DEVELOPMENT_TEAM = WR9LAGW6KW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskFlow/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "TaskFlow use Face ID to unlock sensitive tasks. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -381,6 +394,9 @@
 				DEVELOPMENT_TEAM = WR9LAGW6KW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskFlow/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "TaskFlow use Face ID to unlock sensitive tasks. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

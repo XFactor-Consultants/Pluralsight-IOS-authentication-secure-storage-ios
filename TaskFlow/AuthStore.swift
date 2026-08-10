@@ -21,6 +21,10 @@ final class AuthStore {
     
     private(set) var state: AuthState = .signedOut
     var lastError: AuthError?
+    var hasStoredSession: Bool {
+        
+        TokenVault.read() != nil
+    }
     
     func completeAppleSignIn(_ authorization: ASAuthorization) {
         
@@ -36,7 +40,7 @@ final class AuthStore {
             lastError = .hiddenAppleIDEmail
         }
         
-        state = .signedIn(userID: credential.user)
+        establishSession(for: credential.user)
         
     }
     
@@ -59,6 +63,8 @@ final class AuthStore {
     
     func signOut() {
         
+        TokenVault.delete()
+        
         state = .signedOut
         lastError = nil
     }
@@ -66,9 +72,20 @@ final class AuthStore {
     func completePasskeySignIn(userID: String) {
         
         lastError = nil
-        state = .signedIn(userID: userID)
+        establishSession(for: userID)
         
     }
     
+    func establishSession(for userID: String) {
+        
+        let token = "st_" + UUID().uuidString
+        guard TokenVault.save(token) else {
+            
+            lastError = .unknown
+            return
+        }
+        
+        state = .signedIn(userID: userID)
+    }
 }
 

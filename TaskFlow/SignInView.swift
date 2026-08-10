@@ -91,7 +91,15 @@ struct SignInView: View {
                 .background(.quaternary, in: RoundedRectangle(cornerRadius: 12))
                 
             }
+            Text(authStore.hasStoredSession
             
+            ? "A session is stored on this device."
+            
+                 : "No stored session on this device.")
+            
+            .font(.caption)
+            
+            .foregroundStyle(.secondary)
         }
         
         .padding()
