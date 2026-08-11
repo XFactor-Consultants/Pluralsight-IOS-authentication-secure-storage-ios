@@ -1,17 +1,27 @@
 import SwiftUI
+
 struct TaskDetailView: View {
     @Environment(TasksStore.self) private var tasksStore
+    @Environment(AuthStore.self) private var authStore
+    @Environment(LocalContentCache.self) private var contentCache
     @State private var gate = BiometricGate()
     let task: TaskItem
+
     var body: some View {
-        if task.isSensitive && !gate.isUnlocked {
-            LockedTaskView(gate: gate)
-                .navigationTitle("Task")
-                .navigationBarTitleDisplayMode(.inline)
-        } else {
-            taskForm
+        Group {
+            if task.isSensitive && !gate.isUnlocked {
+                LockedTaskView(gate: gate)
+                    .navigationTitle("Task")
+                    .navigationBarTitleDisplayMode(.inline)
+            } else {
+                taskForm
+            }
+        }
+        .task {
+            await authStore.refreshIfNeeded()
         }
     }
+
     private var taskForm: some View {
         Form {
             Section {
@@ -29,6 +39,7 @@ struct TaskDetailView: View {
                         .foregroundStyle(.secondary)
                 }
             }
+
             Section("Details") {
                 if let assignee = task.assignee {
                     LabeledContent("Assigned to", value: assignee.name)
@@ -46,6 +57,7 @@ struct TaskDetailView: View {
                     LabeledContent("Sensitive", value: "Yes")
                 }
             }
+
             Section {
                 Button(task.isComplete ? "Mark as Not Complete" : "Mark as Complete") {
                     tasksStore.toggleComplete(task)
@@ -59,10 +71,15 @@ struct TaskDetailView: View {
                 Label("Share", systemImage: "square.and.arrow.up")
             }
         }
+        .onAppear {
+            contentCache.store(task.notes, for: task.id)
+        }
     }
 }
+
 struct LockedTaskView: View {
     let gate: BiometricGate
+
     var body: some View {
         VStack(spacing: 16) {
             Image(systemName: "lock.fill")
@@ -83,10 +100,10 @@ struct LockedTaskView: View {
         .padding()
     }
 }
+
 #Preview {
     NavigationStack {
         TaskDetailView(task: TasksStore().tasks[0])
     }
     .environment(TasksStore())
 }
-
