@@ -3,10 +3,13 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(TasksStore.self) private var tasksStore
     @Environment(AuthStore.self) private var authStore
+    @Environment(LocalContentCache.self) private var contentCache
 
     var body: some View {
         NavigationStack {
             Form {
+                // Module 1, Clip 2 replaces this section with the signed-in
+                // user's ID and a working Sign Out button backed by AuthStore.
                 Section("Account") {
                     if case .signedIn(let userID) = authStore.state {
                         LabeledContent("User", value: userID)
@@ -14,8 +17,18 @@ struct SettingsView: View {
                     LabeledContent("Session",
                                    value: authStore.hasStoredSession ? "Stored on this device" : "None")
                     Button("Sign Out", role: .destructive) {
-                        authStore.signOut()
+                        Task { await authStore.signOut() }
                     }
+                    #if DEBUG
+                    Button("Force Expire Session") {
+                        Task { await authStore.debugForceExpire() }
+                    }
+                    #endif
+                    #if DEBUG
+                    Button("Tamper With Cached Content") {
+                        contentCache.debugCorruptFirstEntry()
+                    }
+                    #endif
                 }
 
                 Section("Workspace") {
@@ -47,5 +60,6 @@ struct SettingsView: View {
 #Preview {
     SettingsView()
         .environment(TasksStore())
-        .environment(AuthStore())
+        .environment(AuthStore(contentCache: LocalContentCache()))
+        .environment(LocalContentCache())
 }

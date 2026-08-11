@@ -1,10 +1,3 @@
-//
-//  AuthStore.swift
-//  TaskFlow
-//
-//  Created by Chris Hewitt on 8/6/26.
-//
-
 import Foundation
 import Observation
 import AuthenticationServices
@@ -21,9 +14,24 @@ final class AuthStore {
     
     private(set) var state: AuthState = .signedOut
     var lastError: AuthError?
+    
+    private let backend = MockAuthBackend()
+    
     var hasStoredSession: Bool {
         
-        TokenVault.read() != nil
+        SessionVault.read() != nil
+        
+    }
+    let contentCache: LocalContentCache
+    init(contentCache: LocalContentCache) {
+        
+        self.contentCache = contentCache
+        
+        if let session = SessionVault.read() {
+            
+            state = .signedIn(userID: "restored-session")
+            
+        }
     }
     
     func completeAppleSignIn(_ authorization: ASAuthorization) {
@@ -40,7 +48,11 @@ final class AuthStore {
             lastError = .hiddenAppleIDEmail
         }
         
-        establishSession(for: credential.user)
+        Task {
+            
+            await establishSession(for: credential.user)
+            
+        }
         
     }
     
@@ -61,31 +73,74 @@ final class AuthStore {
         
     }
     
-    func signOut() {
+    func signOut() async {
         
-        TokenVault.delete()
+        SessionVault.delete()
+        
+        contentCache.clear()
         
         state = .signedOut
+        
         lastError = nil
     }
     
     func completePasskeySignIn(userID: String) {
         
         lastError = nil
-        establishSession(for: userID)
+        
+        Task {
+            
+            await establishSession(for: userID)
+            
+        }
         
     }
     
-    func establishSession(for userID: String) {
+    func establishSession(for userID: String) async {
         
-        let token = "st_" + UUID().uuidString
-        guard TokenVault.save(token) else {
+        let session = await backend.issueSession(for: userID)
+        
+        guard SessionVault.save(session) else {
             
             lastError = .unknown
             return
         }
         
         state = .signedIn(userID: userID)
+        
     }
+    
+    func refreshIfNeeded() async {
+        
+        guard let session = SessionVault.read(), session.isExpiringSoon else { return }
+
+        let refreshed = await backend.refresh(refreshToken: session.refreshToken)
+
+        if !SessionVault.save(refreshed) {
+            
+            lastError = .unknown
+        }
+    }
+    
+#if DEBUG
+    func debugForceExpire() async {
+        
+        guard let session = SessionVault.read() else { return }
+        
+        let expired = AuthSession(
+            
+            accessToken: session.accessToken,
+            
+            refreshToken: session.refreshToken,
+            
+            expiresAt: .now.addingTimeInterval(-1)
+            
+        )
+        
+        _ = SessionVault.save(expired)
+        
+    }
+    
+#endif
 }
 
