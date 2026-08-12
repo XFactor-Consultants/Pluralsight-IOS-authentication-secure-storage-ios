@@ -38,6 +38,22 @@ struct TaskDetailView: View {
                     Text(task.notes)
                         .foregroundStyle(.secondary)
                 }
+                Button("Copy Note") {
+                    
+                    UIPasteboard.general.string = task.notes
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+                        
+                        if UIPasteboard.general.string == task.notes {
+                            
+                            UIPasteboard.general.string = ""
+                            
+                        }
+                        
+                    }
+                    
+                }
+
             }
 
             Section("Details") {
